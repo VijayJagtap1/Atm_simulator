@@ -1,2 +1,2 @@
-# Dhirajw-Atm_simulator
+# Atm_simulator
 Project on atm simulator
