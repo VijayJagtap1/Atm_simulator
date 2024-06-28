@@ -41,21 +41,15 @@ public class Atm {
 	private int c_type3;
 	@Column
 	private int c_type4;
+	@Column
+	private String name;
 	
-	
-	public String getLocation() {
-		return location;
-	}
-	public Atm() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	public Atm(String location, int bankId, String city, int pinCode, double totalCash, int c_type1Counter,
+	public Atm(int id, String location, String city, int pinCode, double totalCash, int c_type1Counter,
 			int c_type2Counter, int c_type3Counter, int c_type4Counter, int c_type1, int c_type2, int c_type3,
-			int c_type4) {
+			int c_type4, String name) {
 		super();
+		this.id = id;
 		this.location = location;
-//		this.bankId = bankId;
 		this.city = city;
 		this.pinCode = pinCode;
 		this.totalCash = totalCash;
@@ -67,12 +61,29 @@ public class Atm {
 		this.c_type2 = c_type2;
 		this.c_type3 = c_type3;
 		this.c_type4 = c_type4;
+		this.name = name;
 	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getLocation() {
+		return location;
+	}
+	public Atm() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
 	@Override
 	public int hashCode() {
-		return Objects.hash( c_type1, c_type1Counter, c_type2, c_type2Counter, c_type3, c_type3Counter, c_type4,
-				c_type4Counter, city, location, pinCode, totalCash);
+		return Objects.hash(c_type1, c_type1Counter, c_type2, c_type2Counter, c_type3, c_type3Counter, c_type4,
+				c_type4Counter, city, id, location, name, pinCode, totalCash);
 	}
+	
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -82,21 +93,28 @@ public class Atm {
 		if (getClass() != obj.getClass())
 			return false;
 		Atm other = (Atm) obj;
-		return  c_type1 == other.c_type1 && c_type1Counter == other.c_type1Counter
-				&& c_type2 == other.c_type2 && c_type2Counter == other.c_type2Counter && c_type3 == other.c_type3
+		return c_type1 == other.c_type1 && c_type1Counter == other.c_type1Counter && c_type2 == other.c_type2
+				&& c_type2Counter == other.c_type2Counter && c_type3 == other.c_type3
 				&& c_type3Counter == other.c_type3Counter && c_type4 == other.c_type4
-				&& c_type4Counter == other.c_type4Counter && Objects.equals(city, other.city)
-				&& Objects.equals(location, other.location) && pinCode == other.pinCode
+				&& c_type4Counter == other.c_type4Counter && Objects.equals(city, other.city) && id == other.id
+				&& Objects.equals(location, other.location) && Objects.equals(name, other.name)
+				&& pinCode == other.pinCode
 				&& Double.doubleToLongBits(totalCash) == Double.doubleToLongBits(other.totalCash);
 	}
 	@Override
 	public String toString() {
-		return "Atm [location=" + location  +", city=" + city + ", pinCode=" + pinCode
-				+ ", totalCash=" + totalCash + ", c_type1Counter=" + c_type1Counter + ", c_type2Counter="
-				+ c_type2Counter + ", c_type3Counter=" + c_type3Counter + ", c_type4Counter=" + c_type4Counter
-				+ ", c_type1=" + c_type1 + ", c_type2=" + c_type2 + ", c_type3=" + c_type3 + ", c_type4=" + c_type4
-				+ "]";
+		return "Atm [id=" + id + ", location=" + location + ", city=" + city + ", pinCode=" + pinCode + ", totalCash="
+				+ totalCash + ", c_type1Counter=" + c_type1Counter + ", c_type2Counter=" + c_type2Counter
+				+ ", c_type3Counter=" + c_type3Counter + ", c_type4Counter=" + c_type4Counter + ", c_type1=" + c_type1
+				+ ", c_type2=" + c_type2 + ", c_type3=" + c_type3 + ", c_type4=" + c_type4 + ", name=" + name + "]";
 	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	
 	public void setLocation(String location) {
 		this.location = location;
 	}
