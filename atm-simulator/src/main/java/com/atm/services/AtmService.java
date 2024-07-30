@@ -1,4 +1,4 @@
-package com.atm.service;
+package com.atm.services;
 
 import java.util.List;
 
@@ -84,7 +84,7 @@ public class AtmService implements AtmServiceInterface
 		{
 			if(updateAtm.getId() == a.getId())
 			{
-				atmRepoRef.save(a);
+				atmRepoRef.save(updateAtm);
 				
 			}
 		}
