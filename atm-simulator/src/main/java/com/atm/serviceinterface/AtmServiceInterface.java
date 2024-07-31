@@ -2,8 +2,11 @@ package com.atm.serviceinterface;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.atm.entities.Atm;
 
+@Service
 public interface AtmServiceInterface {
 
     public void insertAtmDetails(Atm atmDetail);

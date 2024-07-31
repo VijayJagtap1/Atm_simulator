@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\Users\exam\Desktop\CDAC_Project"/>
 			<item value="D:\ATM-Simulator\atm-simulator"/>
 		</list>
 		<list key="projectNameTemplate">

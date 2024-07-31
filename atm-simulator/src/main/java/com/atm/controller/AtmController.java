@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.atm.entities.Atm;
-import com.atm.service.AtmService;
+import com.atm.serviceinterface.AtmServiceInterface;
 
 @RestController
 public class AtmController 
 {
 	@Autowired
-	private AtmService atmServiceRef;
+	private AtmServiceInterface atmServiceRef;
 	
 	@GetMapping("/Getatm")
 	public List<Atm> getAllAtm()
@@ -38,13 +38,13 @@ public class AtmController
 		System.out.println("Inserted records successfully.");
 	}
 	
-	@GetMapping("Getatm/{id}")
+	@GetMapping("/Getatm/{id}")
 	public Atm findAtmById(@PathVariable int id)
 	{
 		return atmServiceRef.findAtmById(id);
 	}
 	
-	@GetMapping("Getatm/{name}")
+	@GetMapping("/Getatm/{name}")
 	public Atm findAtmByName(@PathVariable String name)
 	{
 		return atmServiceRef.findAtmByName(name);
